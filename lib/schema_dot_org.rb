@@ -3,9 +3,6 @@ require 'json'
 require 'validated_object'
 require 'graph_container'
 
-#
-# Abstract base class for all the Schema.org types.
-#
 module SchemaDotOrg
 
   def self.create_graph(*schema_objects)

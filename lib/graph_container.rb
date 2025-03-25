@@ -1,11 +1,18 @@
 module SchemaDotOrg
-  class GraphContainer  
+  class GraphContainer < SchemaType
     def initialize(*schema_objects)
       @schema_objects = schema_objects.flatten
     end
   
     def to_s
-      to_json_ld
+      json_string = to_json_ld(pretty: (!rails_production? && !ENV['SCHEMA_DOT_ORG_MINIFIED_JSON']))
+
+      # Mark as safe if we're in Rails
+      if json_string.respond_to?(:html_safe)
+        json_string.html_safe
+      else
+        json_string
+      end
     end
   
     def to_json_ld(pretty: false)

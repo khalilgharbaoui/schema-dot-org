@@ -33,6 +33,10 @@ module SchemaDotOrg
         structure.to_json
       end
     end
+
+    def rails_production?
+      defined?(Rails) && Rails.env.production?
+    end
   end
 end
 

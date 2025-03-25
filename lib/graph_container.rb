@@ -1,5 +1,5 @@
 module SchemaDotOrg
-  class GraphContainer < SchemaType
+  class GraphContainer
     def initialize(*schema_objects)
       @schema_objects = schema_objects.flatten
     end

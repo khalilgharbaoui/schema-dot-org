@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-
+require 'schema_dot_org/college_or_university'
 #
 # Model the Schema.org **Person**.  See http://schema.org/Person
 #

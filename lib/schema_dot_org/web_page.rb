@@ -9,5 +9,6 @@ module SchemaDotOrg
     validated_attr :text, type: String, allow_nil: true
     validated_attr :description, type: String, allow_nil: true
     validated_attr :in_language, type: String, allow_nil: true
+    validated_attr :is_part_of, type: SchemaDotOrg::WebSite, allow_nil: true
   end
 end

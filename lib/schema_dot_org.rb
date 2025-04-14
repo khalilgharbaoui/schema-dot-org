@@ -75,7 +75,8 @@ module SchemaDotOrg
 
     def attrs_and_values
       attrs.map do |attr|
-        next if attr.to_s == "id"
+        # Skip both id and @id since we handle @id separately in to_json_struct
+        next if attr.to_s == "id" || attr.to_s == "@id"
         
         attr_string = attr.to_s.delete_prefix('@')
         
@@ -83,7 +84,7 @@ module SchemaDotOrg
         attr_value = instance_variable_get(attr)
   
         [attr_name, resolve_value(attr_value)]
-      end.to_h
+      end.compact.to_h
     end
 
 
@@ -141,6 +142,7 @@ require 'schema_dot_org/offer'
 require 'schema_dot_org/search_action'
 require 'schema_dot_org/web_site'
 require 'schema_dot_org/breadcrumb_list'
+require 'schema_dot_org/web_page'
 require 'schema_dot_org/answer'
 require 'schema_dot_org/question'
 require 'schema_dot_org/faq_page'

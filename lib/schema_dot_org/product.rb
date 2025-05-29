@@ -9,7 +9,7 @@ module SchemaDotOrg
     validated_attr :description,  type: String, allow_nil: true
     validated_attr :image,        type: Array,  allow_nil: true
     validated_attr :name,         type: String
-    validated_attr :offers,       type: SchemaDotOrg::AggregateOffer
+    validated_attr :offers,       type: [SchemaDotOrg::Offer, SchemaDotOrg::AggregateOffer]
     validated_attr :url,          type: String
   end
 end

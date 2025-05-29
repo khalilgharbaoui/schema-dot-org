@@ -106,8 +106,12 @@ I move on to other things.
 
 ## Supported Schema.org Types
 
-AggregateOffer, ContactPoint, ItemList, ListItem, Offer, Organization, Person, Place,
+**Core Types:** AggregateOffer, ContactPoint, ItemList, ListItem, Offer, Organization, Person, Place,
 Product, SearchAction, and WebSite.
+
+**Enhanced Types:** BreadcrumbList, WebPage, FAQPage, Question, Answer, ImageObject, Thing, Action.
+
+**E-commerce Types:** CollectionPage, SearchResultsPage, LocalBusiness, Review, Rating, HowTo, HowToStep, Store.
 
 Here are a few examples. [The source code for these is extremely easy to read.](https://github.com/dogweather/schema-dot-org/tree/master/lib/schema_dot_org)  Check them out to see all the available attributes.
 
@@ -162,6 +166,12 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'schema_dot_org'
+```
+
+For the enhanced version with additional e-commerce schema types:
+
+```ruby
+gem 'schema_dot_org', git: 'https://github.com/khalilgharbaoui/schema-dot-org'
 ```
 
 ## Development
